@@ -13,13 +13,13 @@ import com.app.pravin.chartservice.bean.CartInfo;
 @RequestMapping("/cart")
 public class ChartController {
 	
-	@Value("${server.port}")
-	static String port;  
+	@Value("${my.app.title}")
+	private String title;  
 
 	@GetMapping("/message")
 	public ResponseEntity<String> getCartMessage() {
 
-		return ResponseEntity.ok("RESPONSE FROM CART-SERVICE "+ "App 2");
+		return ResponseEntity.ok("RESPONSE FROM CART-SERVICE "+ title);
 	}
 	
 	@GetMapping("/info/{id}")
